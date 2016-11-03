@@ -57,6 +57,9 @@ public class PersonService {
 			// pDB.setId(p.getId());
 			pDB.setName(p.getName());
 			pDB.setSurname(p.getSurname());
+			if (p.getId()==null){
+				p.setId((long)personList.size());
+			}
 		}
 	}
 	 

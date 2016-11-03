@@ -1,8 +1,20 @@
 package es.palmademallorca.imi.proyecto2.dto;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class PersonDto {
+
+	@NotNull
+	@Min(1)
 	private Long id;
+
+	@Length(min=3, max=50)
 	private String name;
+
+	@Length(max=50)
 	private String surname;
 	
 	public PersonDto(long id, String name, String surname) {
