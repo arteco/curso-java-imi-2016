@@ -44,7 +44,22 @@ public class PersonDto {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	
-	
-	
+
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		PersonDto personDto = (PersonDto) o;
+
+		return !(id != null ? !id.equals(personDto.id) : personDto.id != null);
+
+	}
+
+	@Override
+	public String toString(){
+		return "id="+id+" name="+name+" surname="+surname;
+	}
+
 }
